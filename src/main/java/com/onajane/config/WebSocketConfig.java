@@ -2,7 +2,9 @@ package com.onajane.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.config.annotation.*;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 
 @Configuration
@@ -22,7 +24,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.setApplicationDestinationPrefixes("/app");
 
         // topic路由到消息代理，向订阅特定主题的所有链接客户端广播消息 enableSimpleBroker基于内存的消息代理
-        registry.enableSimpleBroker("/topic");
+//        registry.enableSimpleBroker("/topic");
+
 
 
         //   STOMP定义数据交换的格式和规则的消息传递协议，可以用于rabbitMQ活ActivateMQ

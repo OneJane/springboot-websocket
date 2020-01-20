@@ -1,0 +1,1 @@
+docker run --privileged=true -p 6379:6379 -v /opt/redis/data:/data -v /opt/redis/conf/:/etc/redis/  --name redis --restart=always -d redis
